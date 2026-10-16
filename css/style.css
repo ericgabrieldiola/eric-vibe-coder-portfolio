@@ -85,6 +85,28 @@ body.light-theme .float-card,body.light-theme .float-card strong{color:#15182a}
   position: relative;
   z-index: 5;
 }
+.brand-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 1.5px solid var(--cyan, #00f5ff);
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.45), 0 0 18px rgba(255, 43, 214, 0.35);
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.brand-avatar-footer {
+  width: 32px;
+  height: 32px;
+}
+.brand:hover .brand-avatar,
+.brand:focus-visible .brand-avatar {
+  transform: scale(1.06);
+  border-color: #ff2bd6;
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.7), 0 0 24px rgba(255, 43, 214, 0.6);
+}
 .topbar nav { display: flex; align-items: center; gap: 15px; flex-wrap: nowrap; }
 .topbar nav a {
   color: #dce6ff;
@@ -866,7 +888,48 @@ body.light-theme .portfolio-contact-form #contactFormStatus.success {
   color: #0b7a5a;
 }
 
+body.light-theme .brand-avatar {
+  border-color: #7000ff;
+  box-shadow: 0 0 8px rgba(112, 0, 255, 0.35), 0 0 14px rgba(0, 220, 255, 0.25);
+}
+body.light-theme .brand:hover .brand-avatar,
+body.light-theme .brand:focus-visible .brand-avatar {
+  border-color: #ff2bd6;
+  box-shadow: 0 0 12px rgba(112, 0, 255, 0.5), 0 0 18px rgba(255, 43, 214, 0.45);
+}
+
 @media (max-width: 600px) {
+  .menu-toggle {
+    display: block;
+  }
+  .topbar nav {
+    display: none;
+    position: absolute;
+    top: 62px;
+    right: 0;
+    left: 0;
+    padding: 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    flex-direction: column;
+    gap: 17px;
+    align-items: stretch;
+  }
+  .topbar nav.open {
+    display: flex;
+  }
+  .topbar nav a {
+    text-align: center;
+  }
+  .brand-avatar {
+    width: 34px;
+    height: 34px;
+  }
+  .brand-avatar-footer {
+    width: 30px;
+    height: 30px;
+  }
   .chat-launcher {
     right: 14px;
     bottom: 14px;
@@ -883,5 +946,3 @@ body.light-theme .portfolio-contact-form #contactFormStatus.success {
     padding: 22px 18px;
   }
 }
-
-
