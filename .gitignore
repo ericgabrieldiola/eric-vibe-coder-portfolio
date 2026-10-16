@@ -1,0 +1,41 @@
+# Environment & Secret files
+.env
+.env.*
+!.env.example
+*.env
+*.key
+*.pem
+*.cert
+id_rsa*
+*.pfx
+
+# Local Database Dumps with personal data (keep schema.sql tracked)
+*.sql.gz
+*.dump
+*.backup
+*.bak
+database/dumps/
+!database/schema.sql
+
+# Application Logs & Cache
+*.log
+logs/
+.system_generated/
+scratch/
+__pycache__/
+*.pyc
+
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Composer / NPM / Temporary build artifacts
+vendor/
+node_modules/
+tmp/
+temp/

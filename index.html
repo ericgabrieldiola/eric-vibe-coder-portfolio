@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080510">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Eric's developer portfolio — web development, AI, game development, robotics, and IT projects.">
+  <title>Eric Gabriel P. Diola | Vibe Coder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="cyberpunk-theme">
+  <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+  <div class="scanline-overlay" aria-hidden="true"></div>
+  <div class="site-glow glow-one"></div><div class="site-glow glow-two"></div>
+  <header class="site-header" id="siteHeader">
+    <div class="topbar">
+      <a class="brand" href="#home" aria-label="Eric home"><span class="brand-mark">E.</span><span>ERIC<span class="brand-muted">.VIBE</span></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">☼</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> BSIT STUDENT · VIBE CODER · AI EXPLORER</div>
+        <h1>Turning ideas<br>into <span class="gradient-text">digital reality.</span></h1>
+        <p class="hero-lead">Hey, I'm Eric Gabriel — a BSIT student and vibe coder who uses creative problem-solving and AI-assisted tools to prototype useful digital experiences while continuously learning and testing.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span>↗</span></a>
+          <a class="button button-ghost" href="#contact">Get in touch</a>
+        </div>
+        <div class="hero-footnote"><span class="line"></span> IDEA → PROMPT → BUILD → TEST → IMPROVE</div>
+        <p class="hero-note"><span class="live-pulse"></span> CURRENT MODE: BUILDING IN PUBLIC</p>
+      </div>
+      <div class="hero-visual" aria-label="Decorative developer illustration">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="profile-orb">
+          <div class="orb-energy" aria-hidden="true"></div>
+          <img class="profile-photo" src="assets/profile-photo.png" alt="Formal profile portrait of Eric Gabriel P. Diola">
+          <span class="orb-caption">VIBE CODER<br>AI EXPLORER</span>
+        </div>
+        <span class="orbit-particle particle-one" aria-hidden="true"></span>
+        <span class="orbit-particle particle-two" aria-hidden="true"></span>
+        <span class="orbit-particle particle-three" aria-hidden="true"></span>
+        <div class="float-card float-code"><span class="float-icon">⌘</span><div><strong>Build</strong><small>Ideas into apps</small></div></div>
+        <div class="float-card float-ai"><span class="float-icon">✳</span><div><strong>Explore AI</strong><small>Learn by creating</small></div></div>
+        <div class="visual-tag tag-top">{" hello, world "}</div><div class="visual-tag tag-bottom">console.log("keep building")</div>
+      </div>
+    </section>
+
+    <section class="section-wrap intro-strip">
+      <div><span class="strip-number">01</span><p>Thoughtful interfaces</p></div>
+      <div><span class="strip-number">02</span><p>Practical applications</p></div>
+      <div><span class="strip-number">03</span><p>Continuous learning</p></div>
+    </section>
+
+    <section class="section-wrap content-section" id="about">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">A LITTLE ABOUT ME</span>
+          <h2>Driven by curiosity and hands-on <span class="gradient-text">development.</span></h2>
+          <p class="section-description">A closer look at my background, IT education, and core technical interests.</p>
+        </div>
+        <span class="section-index">01 / ABOUT</span>
+      </div>
+
+      <div class="about-grid about-two-col">
+        <!-- Left Column: Personal Information Card -->
+        <article class="about-card personal-info-card">
+          <div class="card-kicker">PROFILE DETAILS</div>
+          <h3>Personal Information</h3>
+          <div class="personal-info-list">
+            <div class="info-row">
+              <span class="info-label">Name</span>
+              <span class="info-value">Eric Gabriel P. Diola</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Academic Program</span>
+              <span class="info-value">Bachelor of Science in Information Technology (BSIT)</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">School</span>
+              <span class="info-value">Torres Capitol College, Inc.</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Current Role</span>
+              <span class="info-value"><span class="status-dot"></span> BSIT Student / Aspiring IT Professional</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Location</span>
+              <span class="info-value">Philippines</span>
+            </div>
+          </div>
+          <div class="personal-info-tagline">
+            <div class="mini-icon">⌁</div>
+            <p>Committed to continuous learning, building practical systems, and mastering foundational IT skills.</p>
+          </div>
+        </article>
+
+        <!-- Right Column: Personal Introduction & Core IT Interests -->
+        <div class="about-right-col">
+          <article class="about-card intro-card">
+            <div class="card-kicker">BIOGRAPHY & APPROACH</div>
+            <h3>Building practical solutions through hands-on development.</h3>
+            <p>I am an Information Technology student with a strong passion for exploring technology through active creation. Rather than just studying theoretical concepts, I focus on building and improving practical IT projects, analyzing how software and hardware systems function behind the scenes, and learning through hands-on development.</p>
+            <p>My workflow combines creative problem-solving, structured coding, and modern AI-assisted prototyping tools to build functional, user-focused digital experiences. I believe in writing purposeful code, testing thoroughly, and continuously refining every project I undertake.</p>
+          </article>
+
+          <div class="it-interests-section">
+            <h4 class="interests-heading">Core IT Interests</h4>
+            <div class="interests-grid">
+              <div class="interest-card">
+                <span class="interest-icon">⌘</span>
+                <strong>Web Development</strong>
+                <small>Responsive frontends & clean user interfaces</small>
+              </div>
+              <div class="interest-card">
+                <span class="interest-icon">⌬</span>
+                <strong>Software Development</strong>
+                <small>Application logic & structured coding</small>
+              </div>
+              <div class="interest-card">
+                <span class="interest-icon">▤</span>
+                <strong>Databases</strong>
+                <small>Relational schema design & CRUD data management</small>
+              </div>
+              <div class="interest-card">
+                <span class="interest-icon">⌁</span>
+                <strong>Computer Troubleshooting</strong>
+                <small>Hardware diagnostics & network issue resolution</small>
+              </div>
+              <div class="interest-card">
+                <span class="interest-icon">📱</span>
+                <strong>Android Development</strong>
+                <small>Mobile interfaces & app development workflows</small>
+              </div>
+              <div class="interest-card">
+                <span class="interest-icon">✳</span>
+                <strong>AI-Assisted Prototyping</strong>
+                <small>Vibe coding, rapid iteration & prompt design</small>
+              </div>
+              <div class="interest-card">
+                <span class="interest-icon">🤖</span>
+                <strong>Robotics</strong>
+                <small>Arduino microcontrollers, sensors & automation</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section reveal-section" id="education">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ACADEMIC BACKGROUND</span>
+          <h2>Education.</h2>
+          <p class="section-description">Formal schooling, IT education, and foundational academic journey.</p>
+        </div>
+        <span class="section-index">02 / EDUCATION</span>
+      </div>
+      <div class="education-list">
+        <article class="education-card">
+          <div class="education-main">
+            <div class="education-logo-container">
+              <img src="assets/education/torres-capitol-college.jpg" alt="Torres Capitol College, Inc. logo" class="education-logo" loading="lazy">
+            </div>
+            <div class="education-details">
+              <h3 class="education-school">Torres Capitol College, Inc.</h3>
+              <p class="education-degree">Bachelor of Science in Information Technology (BSIT)</p>
+            </div>
+          </div>
+          <div class="education-period">
+            <span class="education-year">2026–2027</span>
+          </div>
+        </article>
+
+        <article class="education-card">
+          <div class="education-main">
+            <div class="education-logo-container">
+              <img src="assets/education/old-damulog-national-high-school.png" alt="Old Damulog National High School logo" class="education-logo" loading="lazy">
+            </div>
+            <div class="education-details">
+              <h3 class="education-school">Old Damulog National High School</h3>
+              <p class="education-degree">Secondary Education / High School Diploma</p>
+            </div>
+          </div>
+          <div class="education-period">
+            <span class="education-year">2022–2023</span>
+          </div>
+        </article>
+
+        <article class="education-card">
+          <div class="education-main">
+            <div class="education-logo-container">
+              <img src="assets/education/madana-mohana-academy.png" alt="Madana Mohana Academy logo" class="education-logo" loading="lazy">
+            </div>
+            <div class="education-details">
+              <h3 class="education-school">Madana Mohana Academy</h3>
+              <p class="education-degree">Primary & Junior High School Education</p>
+            </div>
+          </div>
+          <div class="education-period">
+            <span class="education-year">2016–2017</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="skills">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">TOOLS IN MY TOOLKIT</span>
+          <h2>Skills I'm building.</h2>
+          <p class="section-description">Technical proficiencies organized by domain with clear, transparent skill level badges.</p>
+        </div>
+        <span class="section-index">03 / SKILLS</span>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <div class="skill-header">
+            <span class="skill-symbol">⌘</span>
+            <h3>Web Development</h3>
+          </div>
+          <p class="skill-summary">Building responsive, accessible web interfaces and interactive frontends.</p>
+          <div class="skill-rows">
+            <div class="skill-row"><span class="skill-name">HTML5</span><span class="skill-badge badge-beginner">Beginner</span></div>
+            <div class="skill-row"><span class="skill-name">CSS3 / Flexbox</span><span class="skill-badge badge-beginner">Beginner</span></div>
+            <div class="skill-row"><span class="skill-name">JavaScript</span><span class="skill-badge badge-learning">Currently Learning</span></div>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span class="skill-symbol">▤</span>
+            <h3>Programming & Data</h3>
+          </div>
+          <p class="skill-summary">Application logic, backend scripting, database operations, and APIs.</p>
+          <div class="skill-rows">
+            <div class="skill-row"><span class="skill-name">Python</span><span class="skill-badge badge-beginner">Beginner</span></div>
+            <div class="skill-row"><span class="skill-name">PHP</span><span class="skill-badge badge-learning">Currently Learning</span></div>
+            <div class="skill-row"><span class="skill-name">MySQL</span><span class="skill-badge badge-learning">Currently Learning</span></div>
+            <div class="skill-row"><span class="skill-name">Java (Eclipse)</span><span class="skill-badge badge-beginner">Beginner</span></div>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span class="skill-symbol">✳</span>
+            <h3>AI & Prototyping</h3>
+          </div>
+          <p class="skill-summary">Experimenting with AI agents, local models, and rapid functional prototypes.</p>
+          <div class="skill-rows">
+            <div class="skill-row"><span class="skill-name">AI-Assisted Prototyping</span><span class="skill-badge badge-active">Hands-on</span></div>
+            <div class="skill-row"><span class="skill-name">Local LLMs (Ollama)</span><span class="skill-badge badge-learning">Exploring</span></div>
+            <div class="skill-row"><span class="skill-name">FastAPI</span><span class="skill-badge badge-beginner">Basic</span></div>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-header">
+            <span class="skill-symbol">⌬</span>
+            <h3>Tools & Hardware</h3>
+          </div>
+          <p class="skill-summary">Automation, microcontrollers, sensors, and development workflows.</p>
+          <div class="skill-rows">
+            <div class="skill-row"><span class="skill-name">Git & GitHub</span><span class="skill-badge badge-beginner">Beginner</span></div>
+            <div class="skill-row"><span class="skill-name">VS Code</span><span class="skill-badge badge-active">Dev Tool</span></div>
+            <div class="skill-row"><span class="skill-name">Arduino & Sensors</span><span class="skill-badge badge-project">Project Exposure</span></div>
+          </div>
+        </article>
+      </div>
+      <p class="small-note">Skills shown are technologies and areas I've worked with or am actively learning. Project details reflect my actual role and experience.</p>
+    </section>
+
+    <section class="section-wrap content-section reveal-section" id="services">
+      <div class="section-heading"><div><span class="eyebrow">HOW I CAN HELP</span><h2>Services I'm exploring.</h2><p class="section-description">Student-level services and prototypes, with clear scope and honest expectations.</p></div><span class="section-index">04 / SERVICES</span></div>
+      <div class="skills-grid services-grid">
+        <article class="skill-card"><span class="skill-symbol">⌘</span><h3>Simple Web Pages</h3><p>Basic responsive portfolio pages and landing-page prototypes using HTML and CSS, with JavaScript as I continue learning.</p><div class="chip-row"><span>Beginner level</span><span>AI-assisted</span></div></article>
+        <article class="skill-card"><span class="skill-symbol">✳</span><h3>AI-Assisted Prototypes</h3><p>Early-stage demos built with AI tools, followed by hands-on review and testing of the generated code.</p><div class="chip-row"><span>Prototype only</span><span>Testing needed</span></div></article>
+        <article class="skill-card"><span class="skill-symbol">⌁</span><h3>IT Troubleshooting Guides</h3><p>Organized step-by-step help pages for common PC and connectivity issues, such as the FixFlow prototype.</p><div class="chip-row"><span>Guided support</span><span>Not remote repair</span></div></article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="projects">
+      <div class="section-heading"><div><span class="eyebrow">SELECTED WORK</span><h2>Experiments made real.</h2><p class="section-description">Practical applications, interactive demos, research prototypes, and games. Each project reflects hands-on development and ongoing testing.</p></div><span class="section-index">05 / PROJECTS</span></div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-art art-troubleshoot">
+            <img src="assets/projects/fix-flow-logo.png" alt="FixFlow logo" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:16px;">
+            <span class="art-label">IT SUPPORT / WEB APP</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>01</span><span class="project-type">WEB APPLICATION</span></div>
+            <h3>FixFlow — IT Troubleshooting Assistant</h3>
+            <p>An interactive troubleshooting platform and IT support prototype featuring searchable diagnostic guides for network, audio, and PC issues, support ticket logging, and an organized knowledge base.</p>
+            <div class="chip-row"><span>Searchable Guides</span><span>Support Tickets</span><span>Knowledge Base</span><span>PWA</span></div>
+            <div class="project-links">
+              <a href="https://fixflow-web-opnb.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+              <a href="projects/fixflow/index.html">Local Prototype ↗</a>
+              <span class="status-label">Live + Prototype</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-inventory">
+            <img src="assets/projects/inventory-dashboard.png" alt="Screenshot of the inventory management system dashboard" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+            <span class="art-label">WEB APP / DATABASE</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>02</span><span class="project-type">MANAGEMENT SYSTEM</span></div>
+            <h3>Inventory Management</h3>
+            <p>A system concept for managing products, suppliers, stock movements, and sales records.</p>
+            <div class="chip-row"><span>JavaScript</span><span>Database</span><span>CRUD</span></div>
+            <div class="project-links">
+              <a href="https://inventory-management-system-production-7080.up.railway.app/" target="_blank" rel="noopener noreferrer">Open live system ↗</a>
+              <span class="status-label">AI-assisted project</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-game">
+            <img src="assets/projects/Robot-Battle-Arena.png" alt="Robot Battle Arena game art and thumbnail" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+            <span class="art-label">GAME DEVELOPMENT</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>03</span><span class="project-type">GAME</span></div>
+            <h3>Robot Battle Arena</h3>
+            <p>A game I created to explore interactive logic, gameplay, and creative problem-solving.</p>
+            <div class="chip-row"><span>Game logic</span><span>Interactive design</span><span>Combat</span></div>
+            <div class="project-links">
+              <a href="#contact">View details ↗</a>
+              <span class="status-label">Project details</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-featured">
+          <div class="project-art art-robot" style="height:auto;min-height:220px;padding:0;background:#05030a;">
+            <video class="project-video" controls preload="none" poster="assets/projects/acoustic-wave-firefighting-robot-poster.jpg" title="Acoustic Wave Firefighting Robot demonstration video" aria-label="Demonstration video showing the acoustic wave firefighting robot prototype in action" style="width:100%;height:100%;max-height:260px;object-fit:contain;display:block;">
+              <source src="assets/projects/acoustic-wave-firefighting-robot.mp4" type="video/mp4">
+              Your browser does not support the video tag. You can <a href="assets/projects/acoustic-wave-firefighting-robot.mp4">download the demonstration video</a> directly to watch it.
+            </video>
+            <span class="art-label" style="pointer-events:none;">ROBOTICS / RESEARCH</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>04</span><span class="project-type">CAPSTONE PROTOTYPE</span></div>
+            <h3>Acoustic Wave Firefighting Robot</h3>
+            <p>An academic research prototype exploring autonomous navigation, heat detection, and obstacle avoidance using Arduino and sensors, while directing low-frequency acoustic sound waves toward flame suppression.</p>
+            <div class="chip-row"><span>Arduino</span><span>Sensors</span><span>Robotics</span><span>Acoustic Wave</span></div>
+            <div class="project-links">
+              <a href="#contact">Discuss project ↗</a>
+              <span class="status-label">Research prototype</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-troubleshoot" style="background: radial-gradient(circle at 50% 48%, #4c124f 0, #1c1034 40%, #100b1c 78%);">
+            <span class="art-label">PORTFOLIO BOT / WEB INTERACTION</span>
+            <div class="ai-orbit"><span>✳</span></div>
+            <span class="art-code">portfolioBot.listen()</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>05</span><span class="project-type">INTERACTIVE ASSISTANT</span></div>
+            <h3>Portfolio AI Assistant</h3>
+            <p>An interactive, local knowledge-based assistant designed to help visitors quickly explore Eric's background, education, technical skills, and featured projects.</p>
+            <div class="chip-row"><span>Knowledge-Based</span><span>Interactive</span><span>Local Demo</span></div>
+            <div class="project-links">
+              <button type="button" class="button button-primary" id="tryAssistantBtn" aria-label="Try Portfolio AI Assistant" style="padding: 8px 14px; font-size: 11px; cursor: pointer;">Try Assistant ↗</button>
+              <span class="status-label">Interactive guide</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-art art-ai">
+            <span class="art-label">AI / PYTHON</span>
+            <div class="ai-orbit"><span>✳</span></div>
+            <span class="art-code">assistant.initialize()</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>06</span><span class="project-type">AI ASSISTANT</span></div>
+            <h3>Cire — Personal AI Assistant</h3>
+            <p>An AI-assisted personal assistant prototype created with Antigravity, exploring conversation, local models, and voice interaction.</p>
+            <div class="chip-row"><span>Python</span><span>FastAPI</span><span>Ollama</span></div>
+            <div class="project-links">
+              <a href="https://cire-web.onrender.com/" target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
+              <span class="status-label">Live Assistant</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card project-coming">
+          <div class="project-art art-student">
+            <span class="art-label">PRODUCTIVITY</span>
+            <div class="planner"><span>TO DO</span><i>✓</i><i></i><i>✓</i></div>
+            <span class="art-code">plan.week()</span>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span>07</span><span class="project-type">PLANNED PROJECT</span></div>
+            <h3>IT Student Hub</h3>
+            <p>A proposed space to organize tasks, coding notes, project progress, and OJT activities.</p>
+            <div class="chip-row"><span>Productivity</span><span>Web app</span></div>
+            <div class="project-links">
+              <a href="#contact">Coming next ↗</a>
+              <span class="status-label">Planned</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="certificates">
+      <div class="section-heading"><div><span class="eyebrow">LEARNING & DEVELOPMENT</span><h2>Certificates & training.</h2><p class="section-description">Original certificate files provided for this portfolio.</p></div><span class="section-index">06 / CERTIFICATES</span></div>
+      <div class="skills-grid certificate-grid">
+        <article class="about-card"><h3>DEVCON Bits of Light Roadshow</h3><p>Frontend Forge workshop</p><a href="assets/certificates/devcon-bits-of-light.jpg" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
+        <article class="about-card"><h3>Mix & Move with AI</h3><p>Code.org Hour of AI</p><a href="assets/certificates/mix-move-with-ai.jpg" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
+        <article class="about-card"><h3>BSIT Seminar-Workshop 2026</h3><p>Code + Communicate</p><a href="assets/certificates/bsit-seminar-workshop-2026.pdf" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
+        <article class="about-card"><h3>Digital Danger Zone</h3><p>Protecting Yourself in the Age of Digital Deception</p><a href="assets/certificates/digital-danger-zone.pdf" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section reveal-section" id="activities">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">CO-CURRICULAR & WORKSHOPS</span>
+          <h2>Activities & Seminars.</h2>
+          <p class="section-description">Tech workshops, roadshows, campus seminars, and hands-on developer events I've engaged in.</p>
+        </div>
+        <span class="section-index">07 / ACTIVITIES</span>
+      </div>
+      <div class="skills-grid activities-grid">
+        <article class="about-card">
+          <div class="mini-icon">⌘</div>
+          <h3>DEVCON Frontend Forge</h3>
+          <p>Participated in hands-on frontend web development sessions, interactive coding challenges, and tech community networking during the DEVCON Bits of Light Roadshow.</p>
+          <div class="about-tags"><span>DEVCON</span><span>Frontend</span><span>Workshop</span></div>
+        </article>
+        <article class="about-card">
+          <div class="mini-icon">✳</div>
+          <h3>Code.org Hour of AI</h3>
+          <p>Completed the "Mix & Move with AI" interactive training exploring machine learning fundamentals, algorithm logic, and youth-oriented computer science education.</p>
+          <div class="about-tags"><span>AI Learning</span><span>Code.org</span><span>Hands-on</span></div>
+        </article>
+        <article class="about-card">
+          <div class="mini-icon">⌬</div>
+          <h3>BSIT Seminar-Workshop 2026</h3>
+          <p>Attended the "Code + Communicate" departmental symposium, focusing on technical presentation, collaborative software development, and current IT industry practices.</p>
+          <div class="about-tags"><span>BSIT</span><span>Communication</span><span>Academic</span></div>
+        </article>
+        <article class="about-card">
+          <div class="mini-icon">⌁</div>
+          <h3>Digital Danger Zone Seminar</h3>
+          <p>Engaged in digital deception and cybersecurity defense training, studying phishing vectors, secure authentication, and online privacy measures.</p>
+          <div class="about-tags"><span>Cybersecurity</span><span>Privacy</span><span>Defense</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="resume">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ONE-PAGE RESUME</span>
+          <h2>My current experience.</h2>
+          <p class="section-description">A concise overview of my education, beginner-level skills, projects, and training.</p>
+        </div>
+        <span class="section-index">08 / RESUME</span>
+      </div>
+      <div class="about-card resume-card">
+        <div class="resume-card-header">
+          <div>
+            <span class="card-kicker">OFFICIAL RESUME SUMMARY</span>
+            <h3>Eric Gabriel P. Diola</h3>
+            <p class="resume-subtitle">BSIT Student · Torres Capitol College, Inc. · 2026–2027</p>
+          </div>
+          <div class="hero-actions resume-actions">
+            <a class="button button-primary" href="assets/eric-gabriel-diola-resume.pdf" target="_blank" rel="noopener noreferrer">View Resume ↗</a>
+            <a class="button button-ghost" href="assets/eric-gabriel-diola-resume.pdf" download="Eric-Gabriel-Diola-Resume.pdf">Download Resume ↓</a>
+          </div>
+        </div>
+
+        <hr class="resume-divider" aria-hidden="true">
+
+        <div class="resume-content-groups">
+          <div class="resume-group">
+            <h4>Academic Education</h4>
+            <div class="resume-group-content">
+              <p><strong>Torres Capitol College, Inc.</strong> — Bachelor of Science in Information Technology (BSIT), 2026–2027</p>
+              <p><strong>Old Damulog National High School</strong> — Secondary Education / High School Diploma, 2022–2023</p>
+              <p><strong>Madana Mohana Academy</strong> — Primary & Junior High School Education, 2016–2017</p>
+            </div>
+          </div>
+
+          <hr class="resume-divider" aria-hidden="true">
+
+          <div class="resume-group">
+            <h4>Featured Projects</h4>
+            <div class="resume-group-content">
+              <p><strong>FixFlow</strong> — IT Troubleshooting Assistant with searchable guides & ticket system (Live Demo + Prototype)</p>
+              <p><strong>Inventory Management</strong> — Sales, inventory tracking & CRUD operations system (Live on Railway)</p>
+              <p><strong>Robot Battle Arena</strong> — Interactive 2D combat logic and gameplay</p>
+              <p><strong>Acoustic Wave Firefighting Robot</strong> — Autonomous capstone prototype with acoustic sound wave flame suppression</p>
+            </div>
+          </div>
+
+          <hr class="resume-divider" aria-hidden="true">
+
+          <div class="resume-group">
+            <h4>Technical Toolkit & Certifications</h4>
+            <div class="chip-row">
+              <span>HTML5 & CSS3</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>Java</span>
+              <span>FastAPI</span>
+              <span>Arduino</span>
+              <span>Git & GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-footer-note">
+          <small class="small-note">The full PDF resume includes complete course history, seminar credentials, and contact details. Use the buttons above to view or download the verified document.</small>
+        </div>
+      </div>
+    </section>
+    <section class="section-wrap contact-banner" id="contact">
+      <div>
+        <span class="eyebrow">LET'S CONNECT</span>
+        <h2>Have a project or opportunity<br>in mind?</h2>
+        <p>Leave a message using the form to save it directly to my database, or reach out to me directly via email or GitHub.</p>
+      </div>
+      <form id="portfolioContactForm" class="portfolio-contact-form" novalidate>
+        <label for="contactName">Name</label>
+        <input id="contactName" name="name" maxlength="100" required placeholder="Your name" autocomplete="name">
+        <label for="contactEmail">Your Email</label>
+        <input id="contactEmail" name="email" type="email" maxlength="190" required placeholder="you@example.com" autocomplete="email">
+        <label for="contactMessage">Message</label>
+        <textarea id="contactMessage" name="message" rows="4" maxlength="5000" required placeholder="Write your message here…"></textarea>
+        <button class="button button-primary" type="submit" id="contactSubmitBtn">Send message ↗</button>
+        <p id="contactFormStatus" role="status" aria-live="polite"></p>
+      </form>
+      <div class="contact-actions">
+        <a class="button button-primary" href="mailto:ericgabrieldiola9@gmail.com?subject=Portfolio%20Inquiry">Email me ↗</a>
+        <a class="button button-ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=ericgabrieldiola9@gmail.com&su=Portfolio+Inquiry" target="_blank" rel="noopener noreferrer">Gmail compose ↗</a>
+        <a class="button button-ghost" href="https://github.com/ericgabrieldiola" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap"><a class="brand" href="#home"><span class="brand-mark">E.</span><span>ERIC<span class="brand-muted">.VIBE</span></span></a><p>Designed and built with curiosity. © <span id="year"></span> Eric.</p><a href="#home">Back to top ↑</a></footer>
+
+  <button class="chat-launcher" id="chatLauncher" aria-label="Open portfolio AI assistant"><span class="chat-spark">✳</span><span>Ask my AI</span></button>
+  <section class="chat-panel" id="chatPanel" aria-label="Portfolio AI assistant" hidden>
+    <header class="chat-header"><div class="chat-avatar">✳</div><div><strong>Eric's Portfolio AI</strong><small><span class="status-dot"></span> Portfolio guide · Demo mode</small></div><button id="chatClose" aria-label="Close assistant">×</button></header>
+    <div class="chat-messages" id="chatMessages" aria-live="polite"><div class="message assistant-message">Hi! I'm Eric's portfolio assistant. Ask me about Eric Gabriel, his education, technical skills, or featured projects!</div><div class="quick-prompts"><button data-prompt="Tell me about Eric">About Eric</button><button data-prompt="Where does Eric study?">Education</button><button data-prompt="What skills does Eric have?">Skills</button><button data-prompt="What projects has Eric built?">Projects</button></div></div>
+    <form class="chat-form" id="chatForm"><label class="sr-only" for="chatInput">Ask a question</label><input id="chatInput" placeholder="Ask about Eric's work…" autocomplete="off" maxlength="300"><button type="submit" aria-label="Send message">↑</button></form>
+    <p class="chat-disclaimer">Demo assistant using portfolio information. A live AI API can be connected later.</p>
+  </section>
+  <script src="js/portfolio-api.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cyber-effects.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "id": "./index.html",
+  "name": "FixFlow \u2014 IT Troubleshooting Assistant",
+  "short_name": "FixFlow",
+  "description": "A guided troubleshooting companion for common computer and device issues.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080510",
+  "theme_color": "#080510",
+  "categories": [
+    "utilities",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

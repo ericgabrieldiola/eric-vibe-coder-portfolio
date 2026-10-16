@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>IT Troubleshooting Assistant | Eric</title><link rel="stylesheet" href="../css/style.css"><style>
+.tool-wrap{width:min(800px,calc(100% - 32px));margin:55px auto 90px}.tool-wrap h1{font:700 clamp(34px,6vw,52px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-2px}.tool-wrap>p{color:var(--muted)}.issue-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:25px 0}.issue-btn{background:var(--panel);border:1px solid var(--border);color:var(--text);padding:18px;border-radius:12px;text-align:left;cursor:pointer}.issue-btn:hover,.issue-btn:focus{border-color:var(--accent)}.issue-btn span{display:block;font-size:24px;margin-bottom:7px}.issue-btn strong{font-size:13px}.issue-btn small{display:block;color:var(--muted);margin-top:5px}.result-box{display:none;background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:24px;margin-top:20px}.result-box.show{display:block}.result-box h2{font:600 23px 'Space Grotesk'}.result-box li{margin:12px 0;color:var(--muted);font-size:14px}.result-box button{margin-top:15px;border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:10px 13px;border-radius:8px;cursor:pointer}.back-link{color:var(--cyan);font-size:13px}@media(max-width:520px){.issue-grid{grid-template-columns:1fr}}
+</style></head>
+<body><header class="topbar"><a class="brand" href="../index.html"><span class="brand-mark">E.</span><span>ERIC<span class="brand-muted">.DEV</span></span></a><a class="back-link" href="../index.html#projects">← Back to portfolio</a></header>
+<main class="tool-wrap"><span class="eyebrow">INTERACTIVE IT SUPPORT TOOL</span><h1>Let's troubleshoot it.</h1><p>Choose the problem you're experiencing to see a few safe first checks. This prototype gives general guidance; it cannot inspect your device directly.</p>
+<div class="issue-grid">
+<button class="issue-btn" data-issue="wifi"><span>📶</span><strong>Wi-Fi won't connect</strong><small>Connection or network problems</small></button>
+<button class="issue-btn" data-issue="slow"><span>🖥️</span><strong>Computer is slow</strong><small>Performance checks</small></button>
+<button class="issue-btn" data-issue="sound"><span>🔊</span><strong>No sound</strong><small>Audio output checks</small></button>
+<button class="issue-btn" data-issue="printer"><span>🖨️</span><strong>Printer not working</strong><small>Queue and connection checks</small></button>
+<button class="issue-btn" data-issue="storage"><span>💾</span><strong>Storage is almost full</strong><small>Space management</small></button>
+<button class="issue-btn" data-issue="keyboard"><span>⌨️</span><strong>Keyboard or mouse issue</strong><small>Input device checks</small></button>
+</div>
+<section class="result-box" id="resultBox" aria-live="polite"><h2 id="resultTitle"></h2><ol id="resultSteps"></ol><p class="small-note">If this is a work/school device, or the problem involves hardware, data loss, or security alerts, ask a trusted technician or your IT administrator before making major changes.</p><button id="resetTool">Choose another problem</button></section>
+</main><footer class="footer section-wrap"><a class="brand" href="../index.html"><span class="brand-mark">E.</span><span>ERIC<span class="brand-muted">.DEV</span></span></a><p>IT Troubleshooting Assistant · Prototype</p><a href="../index.html#projects">Portfolio ↗</a></footer>
+<script>
+const guides={
+wifi:{title:'Wi-Fi won’t connect',steps:['Check whether Airplane mode is off and Wi-Fi is enabled.','Confirm the password and try reconnecting to the correct network.','Restart your device and, if you control it, restart the router.','Check whether another device can connect to the same network.','If the issue continues, use the operating system network troubleshooter or ask IT support before uninstalling drivers or resetting settings.']},
+slow:{title:'Computer is slow',steps:['Save your work and restart the computer.','Close apps and browser tabs you do not need.','Check available storage and remove only files you recognize and no longer need.','Open Task Manager or Activity Monitor to see whether an app is using unusually high resources.','Run the built-in security scan and install updates from official system settings.']},
+sound:{title:'No sound',steps:['Check volume and make sure mute is off.','Select the correct output device, such as speakers or headphones.','Disconnect and reconnect headphones or speakers.','Test sound in another trusted app.','If it still fails, run the built-in audio troubleshooter or ask support to check the driver.']},
+printer:{title:'Printer not working',steps:['Check that the printer is powered on and has paper and ink/toner.','Confirm the computer and printer are connected to the expected network or cable.','Check for an error message on the printer display.','Open the print queue and clear stuck jobs only if you recognize them.','Restart the printer and computer; consult the printer maker’s official support page if needed.']},
+storage:{title:'Storage is almost full',steps:['Check storage usage in your operating system settings.','Empty the recycle bin only after checking its contents.','Remove temporary files using the built-in storage cleanup tool.','Move personal files to a trusted backup location before deleting local copies.','Avoid deleting system folders or unfamiliar files.']},
+keyboard:{title:'Keyboard or mouse issue',steps:['If wired, reconnect the device to another known-working USB port.','If wireless, check its power and battery and reconnect it according to the manufacturer’s instructions.','Test the device on another app or screen.','Restart the computer if you can save your work first.','If the device is physically damaged or this is a managed device, ask a technician for help.']}
+};
+const box=document.getElementById('resultBox');
+document.querySelectorAll('[data-issue]').forEach(btn=>btn.addEventListener('click',()=>{
+ const guide=guides[btn.dataset.issue];document.getElementById('resultTitle').textContent=guide.title;
+ const list=document.getElementById('resultSteps');list.replaceChildren();
+ guide.steps.forEach(step=>{const li=document.createElement('li');li.textContent=step;list.appendChild(li)});
+ box.classList.add('show');box.scrollIntoView({behavior:'smooth',block:'start'});
+}));
+document.getElementById('resetTool').addEventListener('click',()=>{box.classList.remove('show');document.querySelector('.issue-grid').scrollIntoView({behavior:'smooth',block:'start'})});
+</script></body></html>

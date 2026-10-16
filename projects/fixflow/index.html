@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080510">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <meta name="description" content="An interactive IT troubleshooting assistant for common computer and device issues.">
+  <title>FixFlow — IT Troubleshooting Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="FixFlow home"><span class="brand-icon">F<span>+</span></span><span>FixFlow<small>IT TROUBLESHOOTING</small></span></a>
+    <nav><a href="#how-it-works">How it works</a><a href="#common-issues">Common issues</a></nav>
+    <div class="header-actions"><button class="install-btn" id="installButton" hidden>＋ Install app</button><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">☼</button></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="pulse-dot"></span> YOUR FRIENDLY IT SUPPORT GUIDE</div>
+        <h1>Tech problems?<br><span>Let's fix them.</span></h1>
+        <p>Choose what's going wrong. FixFlow will guide you through simple checks and practical next steps—one at a time.</p>
+        <a class="primary-btn" href="#common-issues">Start troubleshooting <span>↘</span></a>
+        <div class="hero-trust"><span>✓</span> Easy-to-follow steps <span>✓</span> No account needed</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-ring ring-one"></div><div class="art-ring ring-two"></div>
+        <div class="laptop">
+          <div class="screen"><div class="screen-top"><i></i><i></i><i></i></div><div class="screen-content"><div class="screen-check">✓</div><b>System check</b><span>Everything starts with a simple step.</span><div class="progress"><i></i></div></div></div>
+          <div class="laptop-base"></div>
+        </div>
+        <div class="floating-bubble bubble-wifi">⌁ <small>Wi-Fi</small></div>
+        <div class="floating-bubble bubble-check">✓ <small>Guided steps</small></div>
+      </div>
+    </section>
+
+    <section class="stats-row" id="how-it-works">
+      <div><span class="stat-icon">01</span><p><b>Pick an issue</b><small>Choose a problem category</small></p></div>
+      <div><span class="stat-icon">02</span><p><b>Follow the steps</b><small>Try simple checks safely</small></p></div>
+      <div><span class="stat-icon">03</span><p><b>Find next steps</b><small>Know what to try next</small></p></div>
+    </section>
+
+    <section class="issues-section" id="common-issues">
+      <div class="section-heading"><div><div class="eyebrow">WHERE DO YOU NEED HELP?</div><h2>Choose a problem</h2><p>Start with the issue that best matches what you're experiencing.</p></div><div class="issue-count">06 TOPICS <span>•</span> GUIDED HELP</div></div>
+      <div class="issue-grid">
+        <button class="issue-card" data-issue="wifi"><span class="issue-icon purple">⌁</span><span class="issue-title">Wi-Fi won't connect</span><span class="issue-desc">Can't connect to Wi-Fi or hotspot.</span><span class="issue-arrow">↗</span></button>
+        <button class="issue-card" data-issue="slow"><span class="issue-icon blue">▤</span><span class="issue-title">Computer is slow</span><span class="issue-desc">Apps lag, freeze, or take too long.</span><span class="issue-arrow">↗</span></button>
+        <button class="issue-card" data-issue="sound"><span class="issue-icon teal">♫</span><span class="issue-title">No sound</span><span class="issue-desc">Speakers or headphones have no audio.</span><span class="issue-arrow">↗</span></button>
+        <button class="issue-card" data-issue="printer"><span class="issue-icon orange">▧</span><span class="issue-title">Printer won't print</span><span class="issue-desc">Jobs are stuck or printer is offline.</span><span class="issue-arrow">↗</span></button>
+        <button class="issue-card" data-issue="storage"><span class="issue-icon pink">▱</span><span class="issue-title">Storage is full</span><span class="issue-desc">Low disk space or storage warnings.</span><span class="issue-arrow">↗</span></button>
+        <button class="issue-card" data-issue="input"><span class="issue-icon green">⌨</span><span class="issue-title">Keyboard or mouse</span><span class="issue-desc">Input device isn't responding.</span><span class="issue-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section class="diagnosis-section" id="diagnosis" hidden>
+      <div class="diagnosis-panel">
+        <div class="diagnosis-top"><div><div class="eyebrow">YOUR TROUBLESHOOTING SESSION</div><h2 id="diagnosisTitle">Let's check the basics</h2></div><button class="text-button" id="changeIssue">← Choose another issue</button></div>
+        <div class="step-progress"><div class="step-progress-fill" id="progressFill"></div></div>
+        <div class="step-count" id="stepCount">STEP 1 OF 3</div>
+        <div id="questionArea"></div>
+        <div id="answerArea" class="answer-area"></div>
+        <div id="resultArea" class="result-area" hidden></div>
+        <div class="diagnosis-footer"><span><i class="safety-dot"></i> Safe, general guidance</span><button class="reset-button" id="resetSession">Restart diagnosis ↻</button></div>
+      </div>
+    </section>
+
+    <section class="safety-note"><div class="safety-symbol">i</div><div><b>A quick safety note</b><p>FixFlow provides general guidance and cannot inspect your device. Don't open power supplies, remove internal parts, disable security tools, or delete unfamiliar system files. If you suspect malware, data loss, overheating, or electrical damage, stop and ask a trusted technician or IT administrator.</p></div></section>
+  </main>
+
+  <footer><a class="brand" href="#top"><span class="brand-icon">F<span>+</span></span><span>FixFlow<small>IT TROUBLESHOOTING</small></span></a><p>Created as a student portfolio project by Eric.</p><a href="#top">Back to top ↑</a></footer>
+  <script src="js/app.js"></script>
+  <script src="js/pwa.js"></script>
+</body>
+</html>
