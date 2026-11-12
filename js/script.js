@@ -355,9 +355,13 @@ function getAnswer(question) {
     normalized.includes('devcon') ||
     normalized.includes('code org') ||
     normalized.includes('mix move') ||
-    normalized.includes('danger zone')
+    normalized.includes('danger zone') ||
+    normalized.includes('pre-internship') ||
+    normalized.includes('preinternship') ||
+    normalized.includes('internship') ||
+    normalized.includes('sipp')
   ) {
-    return "Eric has completed the following verified training and seminars, with original certificates shown in the portfolio:\n• **DEVCON Bits of Light Roadshow** (Frontend Forge workshop)\n• **Mix & Move with AI** (Code.org Hour of AI)\n• **BSIT Seminar-Workshop 2026** (Code + Communicate)\n• **Digital Danger Zone** (Protecting Yourself in the Age of Digital Deception)\n\nYou can view all the original certificate documents in the Certificates section of this portfolio.";
+    return "Eric has completed the following verified training and seminars, with original certificates shown in the portfolio:\n• **Certificate of Completion — Two-Day Mandatory Pre-Internship Training Program (SIPP)** (Torres Capitol College, Inc. · Sept 30, 2026)\n• **DEVCON Bits of Light Roadshow** (Frontend Forge workshop)\n• **Mix & Move with AI** (Code.org Hour of AI)\n• **BSIT Seminar-Workshop 2026** (Code + Communicate)\n• **Digital Danger Zone** (Protecting Yourself in the Age of Digital Deception)\n\nYou can view all the original certificate documents in the Certificates section of this portfolio.";
   }
 
   // 17. Resume
@@ -569,7 +573,90 @@ function initContactForm() {
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initContactForm);
+  document.addEventListener('DOMContentLoaded', () => {
+    initContactForm();
+    initCertificateLightbox();
+  });
 } else {
   initContactForm();
+  initCertificateLightbox();
+}
+
+// Certificate Lightbox
+function initCertificateLightbox() {
+  const lightbox = document.getElementById('certLightbox');
+  const backdrop = document.getElementById('certLightboxBackdrop');
+  const closeBtn = document.getElementById('certLightboxClose');
+  const imgEl = document.getElementById('certLightboxImage');
+  const titleEl = document.getElementById('certLightboxTitle');
+  const captionEl = document.getElementById('certLightboxCaption');
+  const externalLink = document.getElementById('certLightboxExternal');
+
+  if (!lightbox || !imgEl) return;
+
+  let lastActiveElement = null;
+
+  function openLightbox(src, title, caption) {
+    lastActiveElement = document.activeElement;
+    imgEl.src = src;
+    imgEl.alt = title ? `Enlarged view of ${title}` : 'Enlarged certificate preview';
+    if (titleEl) titleEl.textContent = title || 'Certificate';
+    if (captionEl) captionEl.textContent = caption || '';
+    if (externalLink) {
+      externalLink.href = src;
+      externalLink.setAttribute('aria-label', `Open original file for ${title || 'certificate'} in a new tab`);
+    }
+
+    lightbox.hidden = false;
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightbox.setAttribute('aria-hidden', 'true');
+    imgEl.src = '';
+    document.body.style.overflow = '';
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    }
+  }
+
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (backdrop) backdrop.addEventListener('click', closeLightbox);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+
+  // Attach to certificate cards with data-full or triggers
+  document.querySelectorAll('.certificate-grid [data-full]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = trigger.getAttribute('data-full') || trigger.getAttribute('href');
+      const title = trigger.getAttribute('data-title') || trigger.closest('.about-card')?.querySelector('h3')?.textContent || 'Certificate';
+      const caption = trigger.getAttribute('data-caption') || trigger.closest('.about-card')?.querySelector('.cert-institution, p')?.textContent || '';
+      if (src) {
+        openLightbox(src, title, caption);
+      }
+    });
+  });
+
+  // Also support existing image links in .certificate-grid
+  document.querySelectorAll('.certificate-grid a').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    if (/\.(jpg|jpeg|png|webp)$/i.test(href) && !link.hasAttribute('data-full')) {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = link.closest('.about-card');
+        const title = card?.querySelector('h3')?.textContent || 'Certificate';
+        const caption = card?.querySelector('p')?.textContent || '';
+        openLightbox(href, title, caption);
+      });
+    }
+  });
 }

@@ -436,6 +436,27 @@
     <section class="section-wrap content-section" id="certificates">
       <div class="section-heading"><div><span class="eyebrow">LEARNING & DEVELOPMENT</span><h2>Certificates & training.</h2><p class="section-description">Original certificate files provided for this portfolio.</p></div><span class="section-index">06 / CERTIFICATES</span></div>
       <div class="skills-grid certificate-grid">
+        <article class="about-card certificate-card">
+          <div class="cert-header">
+            <span class="card-kicker cert-category">Training &amp; Professional Development</span>
+            <span class="cert-date">Sept 30, 2026</span>
+          </div>
+          <div class="cert-thumb-wrap">
+            <button type="button" class="cert-enlarge-btn" data-full="assets/certificates/preinternship-training-certificate.jpg" data-title="Certificate of Completion" data-caption="Torres Capitol College, Inc. · Two-Day Mandatory Pre-Internship Training Program (SIPP) · Completed September 30, 2026" aria-label="View enlarged Certificate of Completion from Torres Capitol College, Inc.">
+              <img src="assets/certificates/preinternship-training-certificate.jpg" alt="Certificate of Completion awarded to Eric Gabriel P. Diola by Torres Capitol College, Inc. for the Two-Day Mandatory Pre-Internship Training Program in preparation for the Student Internship Program in the Philippines (SIPP)" class="cert-thumb-img" loading="lazy">
+              <span class="cert-zoom-overlay" aria-hidden="true"><span>🔍 View enlarged</span></span>
+            </button>
+          </div>
+          <div class="cert-body">
+            <div class="cert-institution">Torres Capitol College, Inc.</div>
+            <h3 class="cert-title">Certificate of Completion</h3>
+            <p class="cert-desc">Successfully completed the required Two-Day Mandatory Pre-Internship Training Program in preparation for the Student Internship Program in the Philippines (SIPP). This training served as preparation for deployment to the Host Training Establishment.</p>
+            <p class="cert-theme"><em>&ldquo;Bridging Learning and Experience: Preparing Students for the World of Work&rdquo;</em></p>
+          </div>
+          <div class="cert-footer">
+            <a href="assets/certificates/preinternship-training-certificate.jpg" class="cert-link" target="_blank" rel="noopener noreferrer" data-full="assets/certificates/preinternship-training-certificate.jpg" data-title="Certificate of Completion" data-caption="Torres Capitol College, Inc. · Two-Day Mandatory Pre-Internship Training Program (SIPP)">View enlarged certificate ↗</a>
+          </div>
+        </article>
         <article class="about-card"><h3>DEVCON Bits of Light Roadshow</h3><p>Frontend Forge workshop</p><a href="assets/certificates/devcon-bits-of-light.jpg" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
         <article class="about-card"><h3>Mix & Move with AI</h3><p>Code.org Hour of AI</p><a href="assets/certificates/mix-move-with-ai.jpg" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
         <article class="about-card"><h3>BSIT Seminar-Workshop 2026</h3><p>Code + Communicate</p><a href="assets/certificates/bsit-seminar-workshop-2026.pdf" target="_blank" rel="noopener noreferrer">View original certificate ↗</a></article>
@@ -574,6 +595,26 @@
   </main>
 
   <footer class="footer section-wrap"><a class="brand" href="#home" aria-label="Back to top"><img class="brand-avatar brand-avatar-footer" src="assets/profile-photo.png" alt="Profile photo of Eric Gabriel P. Diola" width="32" height="32"><span>ERIC<span class="brand-muted">.VIBE</span></span></a><p>Designed and built with curiosity. © <span id="year"></span> Eric.</p><a href="#home">Back to top ↑</a></footer>
+
+  <!-- Certificate Lightbox Modal -->
+  <div id="certLightbox" class="cert-lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Certificate Image Viewer">
+    <div class="cert-lightbox-backdrop" id="certLightboxBackdrop"></div>
+    <div class="cert-lightbox-dialog">
+      <div class="cert-lightbox-header">
+        <div class="cert-lightbox-info">
+          <h3 id="certLightboxTitle" class="cert-lightbox-title">Certificate</h3>
+          <p id="certLightboxCaption" class="cert-lightbox-caption"></p>
+        </div>
+        <div class="cert-lightbox-actions">
+          <a id="certLightboxExternal" href="#" target="_blank" rel="noopener noreferrer" class="cert-lightbox-btn" title="Open full-resolution file in new tab">Open original ↗</a>
+          <button type="button" id="certLightboxClose" class="cert-lightbox-close" aria-label="Close certificate viewer">✕</button>
+        </div>
+      </div>
+      <div class="cert-lightbox-body">
+        <img id="certLightboxImage" src="" alt="Enlarged certificate preview" class="cert-lightbox-img">
+      </div>
+    </div>
+  </div>
 
   <button class="chat-launcher" id="chatLauncher" aria-label="Open portfolio AI assistant"><span class="chat-spark">✳</span><span>Ask my AI</span></button>
   <section class="chat-panel" id="chatPanel" aria-label="Portfolio AI assistant" hidden>

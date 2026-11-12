@@ -69,3 +69,5 @@ INSERT INTO certificates(title,issuer,file_path,sort_order)
 SELECT 'BSIT Seminar-Workshop 2026: Code + Communicate','Torres Capitol College, Inc.','assets/certificates/bsit-seminar-workshop-2026.pdf',3 WHERE NOT EXISTS(SELECT 1 FROM certificates WHERE title='BSIT Seminar-Workshop 2026: Code + Communicate');
 INSERT INTO certificates(title,issuer,file_path,sort_order)
 SELECT 'Digital Danger Zone: Protecting Yourself in the Age of Digital Deception','Training certificate','assets/certificates/digital-danger-zone.pdf',4 WHERE NOT EXISTS(SELECT 1 FROM certificates WHERE title='Digital Danger Zone: Protecting Yourself in the Age of Digital Deception');
+INSERT INTO certificates(title,issuer,issued_on,file_path,sort_order)
+SELECT 'Certificate of Completion — Two-Day Mandatory Pre-Internship Training Program (SIPP)','Torres Capitol College, Inc.','2026-09-30','assets/certificates/preinternship-training-certificate.jpg',5 WHERE NOT EXISTS(SELECT 1 FROM certificates WHERE title='Certificate of Completion — Two-Day Mandatory Pre-Internship Training Program (SIPP)');
